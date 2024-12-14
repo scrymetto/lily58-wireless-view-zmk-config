@@ -5,7 +5,6 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -28,8 +27,6 @@
 &kp LSHFT  &kp Z   &kp X   &kp C   &kp V     &kp B      &kp LBKT     &kp RBKT  &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                            &mo 1   &kp LALT  &kp LCTRL  &kp SPACE    &kp RET   &mo 2   &kp RCTRL  &kp RGUI
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
@@ -42,14 +39,12 @@
 
             label = "Lower";
             bindings = <
-&kp F12     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                          &kp F6     &kp F7     &kp F8           &kp F9    &kp F10   &kp F11
-&trans      &trans        &trans        &trans        &trans        &trans                          &trans     &trans     &trans           &trans    &trans    &trans
-&trans      &trans        &trans        &trans        &trans        &trans                          &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &kp MINUS  &kp EQUAL  &kp KP_PLUS      &kp LBRC  &kp RBRC  &kp PIPE
-                                        &trans        &trans        &trans        &trans    &trans  &trans     &trans     &trans
+&kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                    &kp F6     &kp F7     &kp F8           &kp F9    &kp F10   &kp F11
+&trans   &trans  &trans  &trans  &trans  &trans                    &trans     &trans     &trans           &trans    &trans    &trans
+&trans   &trans  &trans  &trans  &trans  &trans                    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
+&trans   &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp MINUS  &kp EQUAL  &kp KP_PLUS      &kp LBRC  &kp RBRC  &kp PIPE
+                         &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         raise_layer {
@@ -68,27 +63,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BSLH         &trans
                         &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-        bt {
-            bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans                          &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans                          &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans
-            >;
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        Both {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
