@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -39,11 +40,11 @@
 
             label = "Lower";
             bindings = <
-&kp F12    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                    &kp F6     &kp F7     &kp F8           &kp F9       &kp F10   &kp F11
-&trans     &trans  &trans  &trans  &trans  &trans                    &trans     &trans     &trans           &trans       &trans    &trans
-&kp GRAVE  &trans  &trans  &trans  &trans  &trans                    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp KP_PLUS  &trans    &trans
-&trans     &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT     &kp PIPE  &trans
-                           &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans
+&kp F12    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                            &kp F6     &kp F7     &kp F8           &kp F9       &kp F10   &kp F11
+&trans     &trans  &trans  &trans  &trans  &trans                            &trans     &trans     &trans           &trans       &trans    &trans
+&kp GRAVE  &trans  &trans  &trans  &trans  &trans                            &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp KP_PLUS  &trans    &trans
+&trans     &trans  &trans  &trans  &trans  &trans  &bt BT_CLR_ALL    &trans  &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT     &kp PIPE  &trans
+                           &trans  &trans  &trans  &trans            &trans  &trans     &trans     &trans
             >;
         };
 
